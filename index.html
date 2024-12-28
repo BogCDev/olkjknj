@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Win To</title>
+</head>
+<body>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        var fbclid = getParameterByName('fbclid');
+        var utm_creative = getParameterByName('utm_creative');
+        var utm_campaign = getParameterByName('utm_campaign');
+        var utm_source = getParameterByName('utm_source');
+        var utm_placement = getParameterByName('utm_placement');
+        var campaign_id = getParameterByName('campaign_id');
+        var adset_id = getParameterByName('adset_id');
+        var ad_id = getParameterByName('ad_id');
+        var adset_name = getParameterByName('adset_name');
+        var external_id = getParameterByName('external_id');
+        
+
+        var startParams = "";
+        
+        if (fbclid) startParams += "fbclid=" + encodeURIComponent(fbclid) + "&";
+        if (utm_creative) startParams += "utm_creative=" + encodeURIComponent(utm_creative) + "&";
+        if (utm_campaign) startParams += "utm_campaign=" + encodeURIComponent(utm_campaign) + "&";
+        if (utm_source) startParams += "utm_source=" + encodeURIComponent(utm_source) + "&";
+        if (utm_placement) startParams += "utm_placement=" + encodeURIComponent(utm_placement) + "&";
+        if (campaign_id) startParams += "campaign_id=" + encodeURIComponent(campaign_id) + "&";
+        if (adset_id) startParams += "adset_id=" + encodeURIComponent(adset_id) + "&";
+        if (ad_id) startParams += "ad_id=" + encodeURIComponent(ad_id) + "&";
+        if (adset_name) startParams += "adset_name=" + encodeURIComponent(adset_name) + "&";
+        if(external_id) startParams += "external_id=" + encodeURIComponent(external_id);
+
+        var redirectUrl = "https://t.me/SpinWinAppbot?start=" + startParams;
+
+        window.location.href = redirectUrl;
+    </script>
+</body>
+</html>
